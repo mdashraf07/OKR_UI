@@ -1,0 +1,137 @@
+@import './styles/tokens.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--color-bg-app);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom utility components matching HRMS Video */
+@layer components {
+  .card-hrms {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(226, 232, 240, 0.7);
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius-input);
+    transition: all var(--motion-fast) var(--ease-hrms);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover:not(:disabled) {
+    background-color: var(--color-primary-hover);
+    box-shadow: 0 2px 6px rgba(45, 143, 216, 0.35);
+  }
+  .btn-primary:active:not(:disabled) {
+    background-color: var(--color-primary-pressed);
+  }
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-secondary {
+    background-color: #ffffff;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border-input);
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-input);
+    transition: all var(--motion-fast) var(--ease-hrms);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 40px;
+    cursor: pointer;
+  }
+  .btn-secondary:hover:not(:disabled) {
+    background-color: var(--color-surface-hover);
+    border-color: #94a3b8;
+  }
+  .btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-ghost {
+    background-color: transparent;
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-input);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    cursor: pointer;
+    transition: all var(--motion-fast) var(--ease-hrms);
+    border: none;
+  }
+  .btn-ghost:hover:not(:disabled) {
+    background-color: rgba(241, 245, 249, 0.8);
+    color: var(--color-text-primary);
+  }
+
+  .input-hrms {
+    height: 40px;
+    padding: 0.5rem 0.875rem;
+    border-radius: var(--radius-input);
+    border: 1px solid var(--color-border-input);
+    background-color: #ffffff;
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    width: 100%;
+    outline: none;
+    transition: border-color var(--motion-fast), box-shadow var(--motion-fast);
+  }
+  .input-hrms:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(45, 143, 216, 0.15);
+  }
+  .input-hrms:disabled {
+    background-color: #f1f5f9;
+    color: var(--color-text-muted);
+    cursor: not-allowed;
+  }
+
+  .badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1rem;
+  }
+}
